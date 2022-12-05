@@ -1,0 +1,519 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+* {
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper{
+    min-width: 1050px;
+    min-height: 100%;
+    background-color: #141414;
+    /* padding:0 20px; */
+}
+
+/* Sign in and register page*/
+.signin-container{
+    background-color: #efefee;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.column{
+    background-color: #fff;
+    min-height: 300px;
+    max-height: 100%;
+    width: 450px;
+    box-shadow: rbga(0,0,0, 0.1) 0 2px 12px;
+    padding: 20px 35px;
+    overflow-y: auto;
+}
+
+.signin-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-form input[type="text"],.signin-form input[type="email"],.signin-form input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #dedede;
+    padding: 10px 0 4px 3px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.signin-form input[type="submit"]{
+    background-color: #F1A661;
+    color: white;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.signin-form input[type="submit"]:hover{
+    background-color: #FF884B;
+    color: white;
+}
+.signin-form input:focus{
+    outline: none;
+    background-color: #dedede;
+}
+.signin-title-container{
+    padding-bottom: 20px;
+}
+.signin-title-container h3{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+}
+.signin-title-container p{
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 7px;
+}
+.signin-logo-container{
+    padding-top: 20px;
+}
+.signin-logo-container img{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.signin-message{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.signin-message a{
+    text-decoration: none;
+    font-weight: 600;
+    color: #277BC0;
+}
+.signin-message a:hover{
+    font-size: 16px;
+    color: #FF9551;
+}
+.minor-error-message{
+    font-size: 14px;
+    font-weight: 600;
+    color: #CC3636;
+    margin: 0;
+}
+
+/* Main index page, shows page, movie pages */
+.preview-container, .preview-image{
+    width: 100%;
+}
+.preview-image{
+    max-width: 100%;
+    max-height: 96vh;
+}
+.preview-video{
+    object-fit: fill;
+    width: 100%;
+    max-height: 96vh;
+}
+.preview-container {
+    position: relative;
+    display: flex;
+}
+.preview-overlay{
+    width: 100%;
+    height: 100%;   
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+}
+.main-details{
+    position: relative;
+    top: 35%;    
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.main-details h3, .main-details h4, .main-details .buttons{
+    margin-left: 30px;
+}
+.main-details h3{
+    margin-bottom: 0;
+}
+.preview-subtitle{
+    color: #fff;
+}
+.overlay-title{
+    color: #fff;
+    font-size: 40px;
+
+}
+.main-details button{
+    background-color: rgba(112, 110, 110, 0.4);
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    min-width: 150px;
+    padding: 0 38px;
+    height: 50px;
+    max-height: 50px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.main-details button:hover {
+    background-color: #e6e6e6;
+    color: #000;
+}
+.buttons i{
+    color: inherit;
+    margin-right: 10px;
+}
+
+/* Categories style */
+.preview-categories {
+    color: white;
+}
+.preview-container.small{
+    width: 230px;
+    height: 129px;
+    display: inline-flex;
+    margin-left: 40px;
+}
+.preview-container.small img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.category{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.entities { /* Create the scroll bar horizontally for the movies displayed in the category */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap; /* Get rid of any elements that was wrap to another line and display them horizontally */
+    padding: 20px 0;
+}
+.category a{
+    text-decoration: none;
+    margin-left: 10px;
+}
+.category h3{
+    color: #e5e5e5;
+    margin-left: 40px;
+}
+.preview-categories h1{
+    color: #FCE700;
+    margin-top: 30px;
+    margin-bottom: 0;
+    margin-left: 40px;
+}
+.category h3:hover{
+    color: white;
+}
+.entities::-webkit-scrollbar {
+    width: 2px;
+    height: 10px;
+}
+
+.entities::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(20, 20, 20, 0.3); 
+    border-radius: 10px;
+}
+
+.entities::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(197, 192, 192, 0.5); 
+}
+
+/* Style the error message displayed in the whole page */
+.error-banner{
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Styling the Entity Page */
+.seen-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.seen-icon{
+    color: #00FFD1;
+    font-size: 15px;
+    border: none;
+    text-align: right;
+    margin-right: 5px;
+}
+.seen-text{
+    color: #00FFD1;
+    font-size: 15px;
+    font-style: italic;
+    margin: 0;
+}
+.watch-link{
+    text-decoration: none;
+}
+.season{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+}
+.season h3{
+    color: #fff;
+    font-size: 22px;
+}
+.videos{
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap; /* Get rid of any elements that was wrap to another line and display them horizontally */
+    padding: 20px 0;
+}
+.episode-container{
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 4px;
+}
+.episode-container .contents{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+}
+.episode-container img{
+    width: 230px;
+    height: 129px;
+    object-fit: cover;
+}
+.episode-container .video-info h4,
+.episode-container .video-info p{
+    color: #fff;
+    width: 100%;
+    white-space: normal;
+}
+.episode-container .video-info{
+    max-height: 200px;
+    overflow-y: auto;
+}
+.preview-categories.no-scroll h3{
+    font-size: 22px;
+    padding-left: 40px;
+}
+.preview-categories.no-scroll .category .entities{
+    white-space: normal;
+    
+    padding-left: 40px;
+}
+.no-scroll .preview-container.small{
+    margin: 0;
+}
+
+/* Styling the Watch page */
+.watch-container video{
+    width: 100%;
+    height: 90vh;
+}
+.video-controls{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+}
+.watch-nav{
+    z-index: 2;
+}
+.watch-nav-title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.watch-nav h1{
+    color: #fff;
+    width: 100%;
+    margin: 0;
+}
+.watch-nav h4{
+    margin-top: 10px;
+    width: 100%;
+    color: yellow;
+}
+.watch-nav button i {
+    color: #fff;
+}
+.watch-nav button{
+    font-size: 30px;
+    padding: 30px;
+    background-color: transparent;
+    border: none;
+}
+.up-next {
+    width: 100%;
+    min-width: 1050px;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.up-next i, h2{
+    color: #fff;
+}
+.up-next h3{
+    color: yellow;
+}
+.redo-btn {
+    font-size: 80px;
+    padding: 50px 30px 50px 50px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+.play-next-btn{
+    font-size: 50px;
+    padding: 20px 20px 20px 0;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+
+/* Nav Bar styling */
+.top-navbar{
+    position: fixed;
+    min-width: 1050px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    min-height: 75px;
+    box-sizing: border-box;
+    background-color: #141414;
+}
+.logo-container{
+    width: 12%;
+    max-height: 75px;
+    padding: 2.5px 0;
+    display: flex;
+    justify-content: center;
+}
+.logo-container img{
+    width: 100%;
+    max-height: 70px;
+    object-fit: cover;
+}
+.top-navbar ul{
+    display: flex;
+    list-style: none;
+}
+.top-navbar li a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.right-items-container{
+    text-align: right;
+    flex: 1;
+}
+.right-items-container a{
+    text-decoration: none;
+    margin-right: 4px;
+    margin-left: 20px;
+    color: #fff;
+}
+.logout-btn{
+    color: #fff;
+    background-color: #CC3636;
+    padding: 10px 20px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.right-items-container a i{
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* style search page */
+.search-input-container{
+    padding: 100px 50px;
+}
+.search-input {
+    height: 50px;
+    width: 600px;
+    border: 1px solid #dedede;
+    background-color: transparent;
+    padding: 6px 10px;
+    color: #fff;
+}
+.search-header{
+    color: #fff;
+    margin-top: 0;
+    margin-left: 50px;
+}
+
+/* Stlye the Profile page */
+.setting-container{
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: transparent;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.setting-container h2{
+    color: #fff;
+}
+.form-section{
+    width: 70%;
+    margin: auto;
+    padding: 30px 0 45px 0;
+    border-bottom: 1px solid #dedede;
+}
+.form-section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-section form input[type="text"],
+.form-section form input[type="email"],
+.form-section form input[type="password"]{
+    margin: 10px 0;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.form-section form input[type="submit"]{
+    margin: 10px 0;
+    background-color: #2192FF ;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+.form-section form input[type="submit"]:hover{
+    background-color: #002E94;
+    color: white;
+}
+.second-form{
+    border: none;
+}
+.update-message{
+    color: #FFFF00;
+    margin: 0;
+}
