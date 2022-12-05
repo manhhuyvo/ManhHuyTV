@@ -1,4 +1,4 @@
-# ManhHuyTV is a practice project that I have done using HTML, CSS, Javascript as Front End and PHP, SQL for building Back End
+# ManhHuyTV is a practice project to clone Netflix that I have done using HTML, CSS, Javascript as Front End and PHP, SQL for building Back End
 
 # What you need to run the app locally:
 - XAMPP and PHPMyAdmin: host the php project and SQL database
